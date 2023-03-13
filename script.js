@@ -11,13 +11,23 @@ const planeImg = document.querySelector('.plane-img')
 
 let root = document.documentElement;
 
+let counter = JSON.parse(localStorage.getItem('counter')) || 0;
+
+// zwiększenie wartości licznika przy każdym ładowaniu strony
+window.onload = function () {
+	counter++;
+	localStorage.setItem('counter', JSON.stringify(counter))
+};
+
+
+console.log(`liczba wejść: ${counter}`);
+
 const setTime = () => {
 	const currentTime = new Date();
 	const backHomeTime = new Date('05 09 2023 15:15:00');
     const startApp = new Date('03 11 2023 15:45:00') 
 
     const numbers = backHomeTime - startApp
-    console.log(numbers);
 
 	const result = backHomeTime - currentTime;
 
