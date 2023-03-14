@@ -39,12 +39,11 @@ const setTime = () => {
 	const days = Math.floor(result / 1000 / 60 / 60 / 24);
 
 	photo.setAttribute(`src`, `img/timer--${days}.jpg`);
-    
-
+	
 	daysCount.textContent = days;
-	hoursCount.textContent = hours;
-	minutesCount.textContent = minutes;
-	secondsCount.textContent = seconds;
+	hoursCount.textContent = (hours + '').padStart(2, '0');
+	minutesCount.textContent = (minutes + '').padStart(2, '0');
+	secondsCount.textContent = (seconds + '').padStart(2, '0');
 
 	const percentLeft = (result * 100) / numbers;
 	const distanceInPercentege = 100 - percentLeft;

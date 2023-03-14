@@ -131,6 +131,11 @@ h3 {
     border-radius: 11px;
 }
 
+.card-box {
+    height: 60%;
+    overflow: hidden;
+}
+
 
 .number {
     font-size: 32px;
@@ -179,7 +184,18 @@ h3 {
 }
 
 
+.slide-bottom-sec {
+    animation: slide-bottom 1s cubic-bezier(0, 1, 1, 0)  infinite both;
+}
 
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
 
 
 @media (min-width: 430px) {
